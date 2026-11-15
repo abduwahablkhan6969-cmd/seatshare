@@ -63,7 +63,7 @@ inventoryForm.addEventListener("submit", async (e) => {
   inventoryStatus.textContent = "Checking the SeatShare inventory service…";
   inventoryStatus.className = "inventory-status";
   try {
-    const response = await fetch("/api/inventory/search", {
+const response = await fetch("https://seatshare-api.onrender.com/api/inventory/search", {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify(payload)
