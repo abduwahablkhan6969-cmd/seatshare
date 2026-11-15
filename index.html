@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10251d">
+<title>SeatShare — Join a journey together</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">S</span><span>Seat<span class="brand-green">Share</span><small>TRAVEL TOGETHER. SAVE TOGETHER.</small></span></a>
+  <nav><a href="#groups">Find groups</a><a href="#live-inventory">Live search</a><a href="#how">How it works</a><button class="nav-cta" id="howBtn">How it works</button></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> GROUP TRAVEL, MADE SIMPLE</div>
+      <h1>Your route.<br><em>Your people.</em><br>One group journey.</h1>
+      <p>Find travellers heading the same way. Join a group, help build demand and request a group fare together.</p>
+      <a class="primary-link" href="#groups">Explore travel groups <span>→</span></a>
+      <div class="trust-line"><span>✓</span> Free to browse and join a group request</div>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="plane">✈</div><div class="route-line"></div>
+      <div class="city city-a"><b>DEL</b><small>Delhi</small></div>
+      <div class="city city-b"><b>BBI</b><small>Bhubaneswar</small></div>
+      <div class="floating-card"><span class="mini-icon">👥</span><div><b>Group forming</b><small>Travellers joining now</small></div><strong>+8</strong></div>
+      <div class="visual-caption">One journey can bring people together.</div>
+    </div>
+  </section>
+
+  <section class="search-panel" aria-label="Search groups">
+    <div class="tabs">
+      <button class="tab active" data-type="all">All groups</button>
+      <button class="tab" data-type="flight">✈ Flights</button>
+      <button class="tab" data-type="bus">▰ Buses</button>
+    </div>
+    <form id="searchForm" class="search-grid">
+      <label>FROM<input id="fromSearch" placeholder="Departure city"></label>
+      <label>TO<input id="toSearch" placeholder="Destination city"></label>
+      <label>TRAVEL DATE<input id="dateSearch" type="date"></label>
+      <button class="search-button" type="submit">Find groups <span>→</span></button>
+    </form>
+  </section>
+
+
+  <section class="section live-search-section" id="live-inventory">
+    <div class="section-heading">
+      <div><div class="eyebrow">PROVIDER INVENTORY</div><h2>Search live travel availability</h2>
+      <p>Connect an approved travel provider to show current schedules, fares and seat availability.</p></div>
+    </div>
+    <form id="inventoryForm" class="inventory-form">
+      <label>TRANSPORT
+        <select id="inventoryType"><option value="flight">Flights</option><option value="bus">Buses</option></select>
+      </label>
+      <label>FROM<input id="inventoryFrom" required maxlength="80" placeholder="e.g. Bhubaneswar"></label>
+      <label>TO<input id="inventoryTo" required maxlength="80" placeholder="e.g. Delhi"></label>
+      <label>TRAVEL DATE<input id="inventoryDate" type="date" required></label>
+      <button class="search-button" type="submit">Search availability →</button>
+    </form>
+    <div id="inventoryStatus" class="inventory-status" role="status">
+      Live inventory is not connected yet. Provider credentials and approval are required.
+    </div>
+    <div id="inventoryResults" class="inventory-results" aria-live="polite"></div>
+  </section>
+
+  <section class="section" id="groups">
+    <div class="section-heading">
+      <div><div class="eyebrow">OPEN GROUPS</div><h2>Find a group going your way</h2><p>Join a travel request that matches your route and date.</p></div>
+      <div class="sort-wrap"><label for="sortSelect">Sort by</label><select id="sortSelect"><option value="progress">Almost full</option><option value="date">Travel date</option><option value="type">Transport type</option></select></div>
+    </div>
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="flight">Flights</button><button class="filter" data-filter="bus">Buses</button>
+      <span class="demo-label">DEMO GROUPS · NOT LIVE INVENTORY</span>
+    </div>
+    <div class="group-grid" id="groupGrid"></div>
+  </section>
+
+  <section class="how-section" id="how">
+    <div class="section-heading centered"><div class="eyebrow">HOW SEATSHARE WORKS</div><h2>Join first. Confirm the fare later.</h2><p>A clear process, with no promise of savings until a provider confirms the price.</p></div>
+    <div class="steps">
+      <article><span class="step-no">01</span><div class="step-icon">🔎</div><h3>Find your route</h3><p>Search by origin, destination and travel date.</p></article>
+      <article><span class="step-no">02</span><div class="step-icon">👥</div><h3>Join a group</h3><p>Add your interest to a group request at no upfront cost.</p></article>
+      <article><span class="step-no">03</span><div class="step-icon">🎟️</div><h3>Review the offer</h3><p>When a provider confirms a quote, review the total fare and terms before booking.</p></article>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div><div class="eyebrow">OUR PROMISE</div><h2>Clear prices. No surprise promises.</h2><p>SeatShare helps organise group demand. A group discount is never guaranteed. Every final fare, fee, deadline and cancellation rule must be shown before anyone pays.</p></div>
+    <div class="promise-badge">✓<span>Transparent<br>group requests</span></div>
+  </section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span>Seat<span class="brand-green">Share</span><small>TRAVEL TOGETHER. SAVE TOGETHER.</small></span></a><div>© 2026 SeatShare · Inventory integration starter</div><div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="mailto:hello@seatshare.example">Contact</a></div></footer>
+
+<div class="modal-backdrop" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="close" id="closeModal" aria-label="Close">×</button>
+    <div class="eyebrow">JOIN GROUP REQUEST</div><h2 id="modalTitle">Join this journey</h2><p id="modalRoute" class="modal-route"></p>
+    <div class="notice">This is an expression of interest, not a ticket purchase or seat reservation. The group fare and availability must be confirmed by a provider.</div>
+    <form id="joinForm">
+      <label>Your name<input id="joinName" required maxlength="70" placeholder="Enter your name"></label>
+      <label>Email address<input id="joinEmail" required type="email" placeholder="you@example.com"></label>
+      <label>Number of travellers<select id="joinCount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      <label class="check"><input id="consent" type="checkbox" required><span>I understand this only registers interest. No payment or ticket is taken now.</span></label>
+      <button class="full-button" type="submit">Submit interest</button>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

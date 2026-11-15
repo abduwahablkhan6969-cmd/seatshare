@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10251d">
+  <title>Search flights — SeatShare</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="flights.css">
+</head>
+<body class="flight-page">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">S</span><span>Seat<span class="brand-green">Share</span><small>TRAVEL TOGETHER. SAVE TOGETHER.</small></span></a>
+    <nav><a href="index.html#groups">Find groups</a><a href="index.html#how">How it works</a></nav>
+  </header>
+  <main class="flight-main">
+    <section class="flight-intro">
+      <div class="eyebrow"><span class="dot"></span> SEATSHARE FLIGHT SEARCH</div>
+      <h1>Find your <em>next flight.</em></h1>
+      <p>Search your route and travel date. When an approved flight provider is connected, its offers can appear here.</p>
+    </section>
+
+    <section class="flight-search-card" aria-label="Flight search">
+      <form id="flightSearchForm" class="flight-search-form">
+        <label>FROM
+          <input id="flightFrom" name="from" required maxlength="80" autocomplete="off" placeholder="e.g. Bhubaneswar">
+        </label>
+        <label>TO
+          <input id="flightTo" name="to" required maxlength="80" autocomplete="off" placeholder="e.g. Delhi">
+        </label>
+        <label>DEPARTURE DATE
+          <input id="flightDate" name="date" type="date" required>
+        </label>
+        <button class="search-button" type="submit">Search flights <span>→</span></button>
+      </form>
+      <div class="flight-note"><strong>Good to know:</strong> Searching does not reserve a seat or create a booking. Fares and availability must be confirmed by the provider.</div>
+    </section>
+
+    <section class="flight-results-section" aria-live="polite">
+      <div class="results-heading"><div><div class="eyebrow">FLIGHT OPTIONS</div><h2>Search results</h2></div><span class="results-label">Provider-powered results</span></div>
+      <div id="flightStatus" class="flight-status" role="status">Flight inventory is not connected yet. SeatShare is ready for an approved provider integration.</div>
+      <div id="flightResults" class="flight-results"></div>
+    </section>
+    <p class="back-link"><a href="index.html">← Back to SeatShare home</a></p>
+  </main>
+  <footer><a class="brand footer-brand" href="index.html"><span class="brand-mark">S</span><span>Seat<span class="brand-green">Share</span><small>TRAVEL TOGETHER. SAVE TOGETHER.</small></span></a><div>© 2026 SeatShare · Flight search preview</div></footer>
+  <script src="flights.js"></script>
+</body>
+</html>
